@@ -13,9 +13,12 @@ const SECRET_KEY = "your_secret_key";
 const upload = multer({ dest: 'uploads/' });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['https://houadjeto-dot.github.io', 'http://localhost:5500', 'http://127.0.0.1:5500'],
+    credentials: true
+}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../client')));
+
 
 pool.query(`
     ALTER TABLE projects ADD COLUMN IF NOT EXISTS file_path TEXT;
