@@ -26,9 +26,12 @@ pool.query(`
     ALTER TABLE projects ADD COLUMN IF NOT EXISTS video_link TEXT;
     ALTER TABLE projects ADD COLUMN IF NOT EXISTS technologies TEXT;
     ALTER TABLE projects ADD COLUMN IF NOT EXISTS external_link TEXT; 
-`).then(() => console.log("✅ All Database Columns Synced!"))
-  .catch(err => console.error("❌ Sync Error:", err));
+`).then(() => console.log(" All Database Columns Synced!"))
+  .catch(err => console.error(" Sync Error:", err));
 
+app.get('/', (req, res) => {
+  res.send('InsightHub Server is running!');
+});
 
 app.post('/api/register', async (req, res) => {
     const { email, fullName, password } = req.body;
