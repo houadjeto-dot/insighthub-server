@@ -133,6 +133,9 @@ http://localhost:4040/setup-admin
 This creates the admin account (`admin@academiccity.edu.gh` / `ThisIsAdmin`). Remove or comment out that route in `server.js` afterwards.
 
 ---
+## Flow
+
+Full program flow end to end: register → submit → login as admin → approve → logout → search and find the approved project → view details → comment → bookmark
 
 ## Project Structure
 
