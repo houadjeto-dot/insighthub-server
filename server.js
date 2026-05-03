@@ -64,6 +64,11 @@ app.post('/api/login', async (req, res) => {
     res.status(401).json({ error: "Invalid credentials" });
 });
 
+app.get('/api/make-admin', async (req, res) => {
+    await pool.query("UPDATE users SET is_admin = true WHERE email = 'admin@academiccity.edu.gh'");
+    res.json({ message: "Done" });
+});
+
 app.get('/api/user-status', (req, res) => {
     const token = req.cookies.token;
     if (!token) return res.json({ loggedIn: false });
