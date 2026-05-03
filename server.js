@@ -58,7 +58,7 @@ app.post('/api/login', async (req, res) => {
     const user = result.rows[0];
     if (user && await bcrypt.compare(password, user.password)) {
         const token = jwt.sign({ id: user.id, isAdmin: user.is_admin }, SECRET_KEY);
-        res.cookie('token', token, { httpOnly: true });
+        res.cookie('token', token, { httpOnly: true, sameSite: 'None', secure: true });
         return res.json({ isAdmin: user.is_admin });
     }
     res.status(401).json({ error: "Invalid credentials" });
