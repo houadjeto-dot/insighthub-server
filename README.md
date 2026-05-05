@@ -137,6 +137,9 @@ This creates the admin account (`admin@academiccity.edu.gh` / `ThisIsAdmin`). Re
 
 Full program flow end to end: register → submit → login as admin → approve → logout → search and find the approved project → view details → comment → bookmark
 
+### Navigation 
+landing page (index) → search/submit → account (change to admin with logins or register as a student to go back to search/submit) → if at admin: approve/ reject/ edit → logout → student landing page 
+
 ## Project Structure
 
 ```
